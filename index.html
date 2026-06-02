@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geometry Dash Web</title>
+    <title>Subway Surfers - Pseudo 3D Edition</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
-        <h1>Geometry Dash Web</h1>
-        <div class="game-area" id="gameArea">
-            <div class="player" id="player"></div>
+        <canvas id="subwayCanvas" width="480" height="640"></canvas>
+        
+        <div id="ui-layer">
+            <div class="hud">
+                <div id="score-container">SCORE: <span id="score-val">00000</span></div>
+                <div id="coins-container">🪙 <span id="coins-val">0</span></div>
+            </div>
+            
+            <div id="game-over-screen" class="hidden">
+                <div class="game-over-box">
+                    <h1>BATEU!</h1>
+                    <p>Sua pontuação total foi incrível.</p>
+                    <div class="stats">
+                        <p>Pontos: <span id="final-score">0</span></p>
+                        <p>Moedas: <span id="final-coins">0</span></p>
+                    </div>
+                    <button id="restart-btn">JOGAR DE NOVO</button>
+                    <small>Ou pressione ESPAÇO</small>
+                </div>
+            </div>
         </div>
-        <p>Pressione a barra de espaço para pular!</p>
-        <button onclick="startGame()">Iniciar Jogo</button>
-        <p id="score">Pontuação: 0</p>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
